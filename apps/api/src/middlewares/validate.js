@@ -2,7 +2,17 @@ const { z } = require("zod");
 
 const chatSchema = z.object({
   message: z.string().min(1, "message is required"),
-  context: z.record(z.any()).optional()
+  context: z.record(z.any()).optional(),
+  history: z
+    .array(
+      z.object({
+        role: z.enum(["user", "assistant"]),
+        text: z.string(),
+        ts: z.string().optional(),
+      })
+    )
+    .max(30)
+    .optional(),
 });
 
 function validate(schema) {
