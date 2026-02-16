@@ -41,7 +41,7 @@ export default function ChatUI() {
           <input
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder='e.g. "What was last month\'s most sold product?"'
+            placeholder="e.g. What was last month\'s most sold product?"
             style={{ flex: 1, padding: 10, borderRadius: 10, border: "1px solid #ddd" }}
             onKeyDown={(e) => (e.key === "Enter" ? send() : null)}
           />
