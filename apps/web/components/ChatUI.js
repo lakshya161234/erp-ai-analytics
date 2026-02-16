@@ -106,7 +106,16 @@ export default function ChatUI() {
 
       setResult(json);
 
-      const assistantText = json?.answer ? String(json.answer) : JSON.stringify(json, null, 2);
+      let assistantText;
+
+      if (json?.data?.draft) {
+        assistantText = json.data.draft;
+      } else if (json?.answer) {
+        assistantText = String(json.answer);
+      } else {
+        assistantText = JSON.stringify(json, null, 2);
+      }
+
       setHistory((h) => [...h, { role: "assistant", text: assistantText, ts: tsNow() }]);
     } catch (e) {
       const errText = e?.message ? String(e.message) : String(e);

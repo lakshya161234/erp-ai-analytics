@@ -58,9 +58,9 @@ a { color: inherit; }
 }
 
 .container {
-  width: min(1200px, 100%);
+  width: min(800px, 100%);
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
   gap: 14px;
 }
 
@@ -84,7 +84,7 @@ a { color: inherit; }
 .cardHeaderHint { font-size: 12px; color: var(--muted); }
 
 .chatBody {
-  height: calc(100vh - 64px - 36px - 64px);
+  height: calc(100vh - 64px - 36px - 164px);
   min-height: 420px;
   display: flex;
   flex-direction: column;
